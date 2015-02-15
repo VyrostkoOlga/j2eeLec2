@@ -66,4 +66,12 @@
 		</property>
 	</bean>
 	
+	<!-- jee:jndi-lookup id="maxNumEl" jndi-name="cfg/Config/MaxNumEl" / -->
+	<bean id="maxNum" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="cfg/Config/MaxNumEl" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	<bean id="genericBean" class="ru.vyrostkoolga.j2eelec2.lec3.GenericBean" init-method="init" >
+		<property name="maxNumEl" ref="maxNum" />
+	</bean>
 </beans>

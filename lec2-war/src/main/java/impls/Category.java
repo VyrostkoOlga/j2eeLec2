@@ -2,6 +2,8 @@ package impls;
 
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import excs.NoSuchGoodException;
 import interfaces.*;
 
@@ -9,11 +11,13 @@ public class Category implements ICategory
 {
 	private String _name;
 	private List<IGood> _goods;
+	private static final Logger log = LoggerFactory.getLogger(Category.class);
 	
 	public Category(String name)
 	{
 		_name = name;
 		_goods = new ArrayList<IGood>();
+		log.info("Category is created");
 	}
 
 	public String getName() {return _name;}

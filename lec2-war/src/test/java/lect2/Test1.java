@@ -2,15 +2,21 @@ package lect2;
 
 
 	import static org.junit.Assert.*;
-	import impls.SimpleWarehouse;
-	import interfaces.IWarehouse;
+
+
+import java.util.Hashtable;
+
+import javax.naming.*;
+
+import impls.SimpleWarehouse;
+import interfaces.IWarehouse;
 
 	import org.junit.Test;
-	import org.springframework.context.ApplicationContext;
-	import org.springframework.context.support.AbstractApplicationContext;
-	import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-	import excs.NoSuchGoodException;
+import excs.NoSuchGoodException;
 
 	public class Test1 {
 		

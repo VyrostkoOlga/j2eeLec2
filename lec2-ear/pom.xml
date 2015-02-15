@@ -16,9 +16,9 @@
             <resource>
                 <targetPath>META-INF/</targetPath>
                 <directory>${project.basedir}/ear-content/META-INF/</directory>
-                <excludes>
-                    <exclude>**/weblogic-application.xml</exclude>
-                </excludes>
+                <includes>
+                    <include>**/weblogic-application.xml</include>
+                </includes>
             </resource>
         </resources>
         

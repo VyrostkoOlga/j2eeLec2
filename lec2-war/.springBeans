@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/Beans.xml</config>
 		<config>src/main/webapp/WEB-INF/beans-web.xml</config>
+		<config>src/main/.bindings.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
