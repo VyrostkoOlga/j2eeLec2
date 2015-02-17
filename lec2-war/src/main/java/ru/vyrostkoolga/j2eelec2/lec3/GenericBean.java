@@ -1,27 +1,36 @@
 package ru.vyrostkoolga.j2eelec2.lec3;
-import javax.naming.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.vyrostkoolga.j2eelec2.lec3.jndi.*;
 
-import ru.vyrostkoolga.j2eelec2.lec3.jndi.MaxNumEl;
-
-public class GenericBean
+public class GenericBean 
 {
-	private static final Logger log = LoggerFactory.getLogger( GenericBean.class );
+	private static final Logger mLog = LoggerFactory.getLogger(GenericBean.class.getName());
 	
 	private MaxNumEl _maxNumEl;
+	private Frequency _frequency;
+	private CtgMax _ctgMax;
+	private WName _warName;
 	
-	// @formatter:off
-	public void setMaxNumEl( MaxNumEl max_num ) { _maxNumEl = max_num; }
-	public MaxNumEl getComfortableTemperature( ) { return _maxNumEl; }
-	// @formatter:on
+	public void setMaxNumEl(MaxNumEl num) { _maxNumEl = num; }
+	public MaxNumEl getMaxNumEl() { return _maxNumEl;}
 	
-	public void init( )
+	public void setFrequency(Frequency freq) { _frequency = freq; }
+	public Frequency getFrequency() { return _frequency;}
+	
+	public void setWarName(WName wName) { _warName = wName; }
+	public WName getWarName(){return _warName;}
+	
+	public void setCtgMax(CtgMax ctgMax) { _ctgMax = ctgMax; }
+	public CtgMax getCtgMax() {return _ctgMax;}
+	
+	public void init ( )
 	{
-		log.info( String.format(
-			"Reference %s describes comfortable temperature as %f",
-			_maxNumEl.getRef( ), _maxNumEl.getNum( )
-		) );
+		mLog.info("MaxNumEl is created");
+		mLog.info("Frequency is created");
+		mLog.info("WName is created");
+		mLog.info("CtgMax is created");
 	}
+
 }

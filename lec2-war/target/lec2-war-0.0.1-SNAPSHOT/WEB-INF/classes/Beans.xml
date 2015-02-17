@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans 
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/jee 
+							http://www.springframework.org/schema/jee/spring-jee-3.0.xsd" >
 
 	<bean id="good1" class="impls.Good">
 		<constructor-arg name="name" value="apple" />
@@ -64,5 +69,29 @@
 				<ref bean="ctg3"/>
 			</list>
 		</property>
+	</bean>
+	
+	<bean id="maxNum" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="cfg/MaxNumEl" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	<bean id="freq" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="cfg/Frequency" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	<bean id="warName" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="cfg/WName" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	<bean id="catMax" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="cfg/CtgMax" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	
+	<bean id="genericBean" class="ru.vyrostkoolga.j2eelec2.lec3.GenericBean" init-method="init" >
+		<property name="frequency" ref="freq" />
+		<property name="maxNumEl" ref="maxNum" />
+		<property name="warName" ref="warName" />
+		<property name="ctgMax" ref="catMax" />
 	</bean>
 </beans>

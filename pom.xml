@@ -12,7 +12,9 @@
 		<slf4j-version>1.7.2</slf4j-version>
 		<log4j-version>1.2.15</log4j-version>
 		<jndi-version>1.2</jndi-version>
+		<other-lib-path>/Library/Java/3dpartyLibs</other-lib-path>
 	</properties>
+	
 	<dependencies>
 		<!-- Spring Framework -->
 		<dependency>
@@ -80,14 +82,14 @@
        		<artifactId>fscontext</artifactId>
        		<version>1.2-beta-3</version> 
        		<scope>system</scope>
-			<systemPath>/Library/Java/3dpartyLibs/fscontext.jar</systemPath>
+			<systemPath>${other-lib-path}/fscontext.jar</systemPath>
 		</dependency>
 		<dependency>
       		<groupId>com.sun.jndi</groupId>  
        		<artifactId>providerutil</artifactId>
        		<version>1.2-beta-3</version> 
        		<scope>system</scope>
-			<systemPath>/Library/Java/3dpartyLibs/providerutil.jar</systemPath>
+			<systemPath>${other-lib-path}/providerutil.jar</systemPath>
 		</dependency>
 		</dependencies>
   <modules>
