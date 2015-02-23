@@ -7,13 +7,9 @@ import excs.NoSuchGoodException;
 
 public interface IWarehouse 
 {
-	public void getOneGood(String goodName, int qty) throws NoSuchGoodException;
-	public void addOneGood(IGood newGood, String ctgName);
-	
-	public List<ICategory> getCtgs();
-	public void setCtgs(List<ICategory> ctgs);
-	
-	public void addCategory(ICategory ctg);
+	public void addOneGood(String name, float quantity, float price, 
+							float discount, String description, int ctg);
+	public void getOneGood(int goodId, float quantity) throws NoSuchGoodException;
 	
 	public String getInfo();
 }

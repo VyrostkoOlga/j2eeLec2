@@ -3,68 +3,85 @@ package impls;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.vyrostkoolga.j2eelec2.lec4.entities.Product;
 import excs.NoSuchGoodException;
 import interfaces.*;
 
 public class SimpleWarehouse implements IWarehouse
 {
-	private List<ICategory> _ctgs; //Without specifying type of a category Category is used
+	private List<Category> _categories;
+	private List<Good> _goods;
 	private String _name;
+	private float _capacity;
 	
-	public SimpleWarehouse(String name)
+	public SimpleWarehouse(String name, List<Category> ctgs)
 	{
 		_name = name;
-		_ctgs = new ArrayList<ICategory>();
+		_categories = ctgs;
+		_goods = new ArrayList<Good>();
 	}
-
-	public void getOneGood(String goodName, int qty) throws NoSuchGoodException 
+	
+	public SimpleWarehouse(List<Category> ctgs, List<Good> goods)
 	{
-		for (ICategory ctg: _ctgs)
+		_categories = ctgs;
+		_goods = goods;
+	}
+	
+	public void addCategory(String name) 
+	{
+		for (Category ctg: _categories)
 		{
-			try
-			{
-				ctg.getOneGood(goodName, qty);
+			if (ctg.getName().equals(name))
 				return;
-			}
-			catch (NoSuchGoodException ex)
+		}
+		_categories.add(new Category(name));
+	}
+	
+
+	@Override
+	public void addOneGood(String name, float quantity, float price,
+			float discount, String description, int ctg) 
+	{
+		for (Good one: _goods)
+		{
+			if (one.getName().equals(name))
 			{
-				continue;
+				one.setQuantity(one.getQuantity() + quantity);
 			}
 		}
-		throw new NoSuchGoodException(goodName);
+		
+		Good added = new Good(name, quantity, price, discount, description, ctg);
+		_goods.add(added);
 	}
 
-	public void addOneGood(IGood newGood, String ctgName) 
+	@Override
+	public void getOneGood(int goodId, float quantity) throws NoSuchGoodException 
 	{
-		for (ICategory ctg: _ctgs)
+		if (goodId < _goods.size())
 		{
-			if (ctg.getName().equals(ctgName))
-			{
-				ctg.addOneGood(newGood);
-				return;
-			}
+			throw new NoSuchGoodException(Integer.toString(goodId));
 		}
-		ICategory ctg = new Category(ctgName);
-		ctg.addOneGood(newGood);
-		_ctgs.add(ctg);
+		Good got = _goods.get(goodId);
+		if (got.getQuantity() > quantity)
+		{
+			throw new NoSuchGoodException(Integer.toString(goodId));
+		}
+		
+		got.setQuantity(got.getQuantity() - quantity);
 	}
 
-	public List<ICategory> getCtgs() {return _ctgs;}
-	public void setCtgs(List<ICategory> ctgs) {_ctgs = ctgs;}
-
+	@Override
 	public String getInfo() 
 	{
-		StringBuffer buf = new StringBuffer("Warehouse " + _name + ":\n");
-		for (ICategory one: _ctgs)
+		StringBuffer buf = new StringBuffer();
+		buf.append(String.format("%s\n products:\n", _name));
+		for (Good one: _goods)
 		{
-			buf.append(one.getInfo());
+			buf.append(String.format("%s\n", one.toString()));
 		}
+		buf.append("_______________________________________\n");
+		buf.append("capacity:" + Float.toString(_capacity) + "\n");
 		return new String(buf);
-	}
-
-	public void addCategory(ICategory ctg) 
-	{
-		_ctgs.add(ctg);
 	}
 
 }

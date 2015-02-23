@@ -1,33 +1,37 @@
 package impls;
 
-import interfaces.IGood;
-
-public class Good implements IGood
+public class Good 
 {
 	private String _name;
-	private double _price;
-	private int _qty;
+	private float _price;
+	private float _quantity;
+	private float _discount;
+	private String _description;
+	private int _ctgId;
 	
-	public Good(String name, double price, int qty)
+	public Good (String name, float quantity, float price,
+			float discount, String description, int ctg) 
 	{
 		_name = name;
+		_quantity = quantity;
 		_price = price;
-		_qty = qty;
-	}
-
-	public void setName(String name) {_name = name;}
-	public String getName() {return _name;}
-
-	public void setPrice(double price) {_price = price;}
-	public double getPrice() {return _price;}
-
-	public void setQty(int qty) {_qty = qty;}
-	public int getQty() {return _qty;}
-
-	public String getInfo() 
-	{
-		return _name + " " + _price + " " + _qty + "\n"; 
+		_discount = discount;
+		_description = description;
+		_ctgId = ctg;
 	}
 	
+	public void setName(String name) {_name = name;}
+	public String getName() {return _name;}
+	
+	public void setDescription(String ds) {_description = ds;}
+	public String getDescription() {return _description;}
+	
+	public float getQuantity() {return _quantity;}
+	public void setQuantity(float quantity) {_quantity = quantity;}
+	
+	public String toString()
+	{
+		return _name + "........................" + Float.toString(_quantity);
+	}
 }
 

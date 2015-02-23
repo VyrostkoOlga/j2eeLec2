@@ -1,8 +1,13 @@
 package ru.vyrostkoolga.j2eelec2.lec3;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import ru.vyrostkoolga.j2eelec2.lec3.jndi.*;
+import ru.vyrostkoolga.j2eelec2.lec4.entities.Customer;
+import ru.vyrostkoolga.j2eelec2.lec4.services.ICustomerService;
 
 public class GenericBean 
 {
@@ -25,6 +30,7 @@ public class GenericBean
 	public void setCtgMax(CtgMax ctgMax) { _ctgMax = ctgMax; }
 	public CtgMax getCtgMax() {return _ctgMax;}
 	
+	
 	public void init ( )
 	{
 		mLog.info("MaxNumEl is created");
@@ -32,5 +38,4 @@ public class GenericBean
 		mLog.info("WName is created");
 		mLog.info("CtgMax is created");
 	}
-
 }

@@ -6,7 +6,7 @@
 		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 							http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" >
 
-	<display-name>failed-messages</display-name>
+	<display-name>lec2 application</display-name>
     
 	<context-param>
 		<param-name>contextConfigLocation</param-name>

@@ -1,4 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project 
+		xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+							http://maven.apache.org/xsd/maven-4.0.0.xsd" >
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>ru.vyrostkoolga.j2ee.lec2</groupId>
@@ -10,7 +14,7 @@
   <name>Lecture 2 War Project</name>
   <description>Old Jar Project</description>
   
-  <build>
+	<build>
 		<directory>target</directory>
 		<outputDirectory>target/classes</outputDirectory>
 		<testOutputDirectory>target/test-classes</testOutputDirectory>
@@ -29,8 +33,9 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
-		</resources>
-			<plugins>
+		</resources>    
+   
+		<plugins>
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
@@ -107,4 +112,11 @@
 		</pluginManagement>             
                 
 	</build>      
+  <dependencies>
+  	<dependency>
+  		<groupId>lec2-model</groupId>
+  		<artifactId>lec2-model</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

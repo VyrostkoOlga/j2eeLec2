@@ -10,6 +10,9 @@
 		<config>src/main/resources/Beans.xml</config>
 		<config>src/main/webapp/WEB-INF/beans-web.xml</config>
 		<config>src/main/.bindings.xml</config>
+		<config>src/main/resources/database.xml</config>
+		<config>src/main/resources/persistence.xml</config>
+		<config>src/main/resources/META-INF/orm.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

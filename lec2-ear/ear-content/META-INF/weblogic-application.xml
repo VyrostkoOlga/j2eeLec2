@@ -6,5 +6,7 @@
 	</application-param>
 	<prefer-application-packages>
 		<package-name>org.springframework.*</package-name>
+		<package-name>org.eclipse.persistence.*</package-name>
+		<package-name>org.slf4j.*</package-name>
 	</prefer-application-packages>
 </weblogic-application>

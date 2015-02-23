@@ -2,73 +2,52 @@
 <beans 
 		xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xmlns:jee="http://www.springframework.org/schema/jee"
+		xmlns:context="http://www.springframework.org/schema/context"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans 
 							http://www.springframework.org/schema/beans/spring-beans.xsd
-							http://www.springframework.org/schema/jee 
-							http://www.springframework.org/schema/jee/spring-jee-3.0.xsd" >
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context.xsd" >
 
+	<context:annotation-config />
+	<context:component-scan base-package="ru.vyrostkoolga.j2eelec2" />
+
+	<import resource="database.xml" />
+	
 	<bean id="good1" class="impls.Good">
-		<constructor-arg name="name" value="apple" />
-		<constructor-arg name="price" value="43.2" />
-		<constructor-arg name="qty" value="10" />
+		<constructor-arg name="ctg" value="1"/>
+		<constructor-arg name="description" value=""/>
+		<constructor-arg name="discount" value="0.0"/>
+		<constructor-arg name="name" value="apple"/>
+		<constructor-arg name="price" value="65.5"/>
+		<constructor-arg name="quantity" value="10"/>
 	</bean>
 	
 	<bean id="good2" class="impls.Good">
-		<constructor-arg name="name" value="oranges" />
-		<constructor-arg name="price" value="60.5" />
-		<constructor-arg name="qty" value="5" />
-	</bean>
-	
-	<bean id="good3" class="impls.Good">
-		<constructor-arg name="name" value="strowberries" />
-		<constructor-arg name="price" value="120.4" />
-		<constructor-arg name="qty" value="3" />
-	</bean>
-	
-	<bean id="good4" class="impls.Good">
-		<constructor-arg name="name" value="brokkoli" />
-		<constructor-arg name="price" value="40.5" />
-		<constructor-arg name="qty" value="10" />
+		<constructor-arg name="ctg" value="1"/>
+		<constructor-arg name="description" value=""/>
+		<constructor-arg name="discount" value="0.0"/>
+		<constructor-arg name="name" value="orange"/>
+		<constructor-arg name="price" value="77"/>
+		<constructor-arg name="quantity" value="5"/>
 	</bean>
 	
 	<bean id="ctg1" class="impls.Category">
 		<constructor-arg name="name" value="fruits" />
-		<property name="goods">
+		<constructor-arg name="goods">
 			<list>
 				<ref bean="good1"/>
 				<ref bean="good2"/>
 			</list>
-		</property>
-	</bean>
-	
-	<bean id="ctg2" class="impls.Category">
-		<constructor-arg name="name" value="vegetables" />
-		<property name="goods">
-			<list>
-				<ref bean="good4"/>
-			</list>
-		</property>
-	</bean>
-	
-	<bean id="ctg3" class="impls.Category">
-		<constructor-arg name="name" value="berries" />
-		<property name="goods">
-			<list>
-				<ref bean="good3"/>
-			</list>
-		</property>
+		</constructor-arg>
 	</bean>
 	
 	<bean id="WH1" class="impls.SimpleWarehouse">
 		<constructor-arg name="name" value="130109" />
-		<property name="ctgs">
+		<constructor-arg name="ctgs">
 			<list>
 				<ref bean="ctg1"/>
-				<ref bean="ctg2"/>
-				<ref bean="ctg3"/>
 			</list>
-		</property>
+		</constructor-arg>
 	</bean>
 	
 	<bean id="maxNum" class="org.springframework.jndi.JndiObjectFactoryBean" >
@@ -94,4 +73,17 @@
 		<property name="warName" ref="warName" />
 		<property name="ctgMax" ref="catMax" />
 	</bean>
+	
+	<bean id="customerService" class="ru.vyrostkoolga.j2eelec2.lec4.services.CustomerService" />
+	<bean id="warehouseService" class="ru.vyrostkoolga.j2eelec2.lec4.services.WarehouseService"/>
+	<bean id="productService" class="ru.vyrostkoolga.j2eelec2.lec4.services.ProductService"/>
+	<bean id="categoryService" class="ru.vyrostkoolga.j2eelec2.lec4.services.CategoryService"/>
+		
+	<bean id="genericBeanDataBase" class="ru.vyrostkoolga.j2eelec2.lec4.GenericBean" init-method="init">
+		<property name="customerService" ref="customerService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+		<property name="productService" ref="productService"/>
+		<property name="categoryService" ref="categoryService" />
+	</bean>
+	
 </beans>
