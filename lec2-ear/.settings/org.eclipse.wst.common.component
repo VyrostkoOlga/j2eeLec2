@@ -56,5 +56,11 @@
         <dependent-module archiveName="javax.annotation-api-1.2.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jackson-mapper-asl-1.7.1.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.7.1/jackson-mapper-asl-1.7.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jackson-core-asl-1.7.1.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-core-asl/1.7.1/jackson-core-asl-1.7.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

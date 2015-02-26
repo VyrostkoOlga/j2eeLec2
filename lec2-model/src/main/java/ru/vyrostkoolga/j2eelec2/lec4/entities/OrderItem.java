@@ -2,6 +2,8 @@ package ru.vyrostkoolga.j2eelec2.lec4.entities;
 
 import javax.persistence.*;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="orderItems")
 public class OrderItem 

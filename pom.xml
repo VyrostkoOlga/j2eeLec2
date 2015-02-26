@@ -17,6 +17,10 @@
 		<persistence-api-version>1.0.2</persistence-api-version>
 		<org.eclipse.persistence-version>2.5.1</org.eclipse.persistence-version>
 		<javax.annotation-version>1.2</javax.annotation-version>
+		<servlet.api-version>2.5</servlet.api-version>
+		<jackson.json-version>1.7.1</jackson.json-version>
+		<javax.servlet.jsp-version>2.2</javax.servlet.jsp-version>
+		<javax.servlet.jstl-version>1.2</javax.servlet.jstl-version>
 	</properties>
 	
 	<modules>
@@ -95,6 +99,14 @@
 			<artifactId>javax.annotation-api</artifactId>
 			<version>${javax.annotation-version}</version>
 		</dependency>
+		
+		<!-- JackSon JSON -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.json-version}</version>
+		</dependency>
+		<!-- End JackSon JSON -->
 	</dependencies>	
 	
 </project>

@@ -13,6 +13,8 @@
 		<config>src/main/resources/database.xml</config>
 		<config>src/main/resources/persistence.xml</config>
 		<config>src/main/resources/META-INF/orm.xml</config>
+		<config>src/main/resources/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/views/index.jsp</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -1,5 +1,7 @@
 package ru.vyrostkoolga.j2eelec2.lec4;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,8 +13,13 @@ import ru.vyrostkoolga.j2eelec2.lec4.entities.Warehouse;
 import ru.vyrostkoolga.j2eelec2.lec4.repositories.CustomerRepository;
 import ru.vyrostkoolga.j2eelec2.lec4.services.ICategoryService;
 import ru.vyrostkoolga.j2eelec2.lec4.services.ICustomerService;
+import ru.vyrostkoolga.j2eelec2.lec4.services.IOrderService;
 import ru.vyrostkoolga.j2eelec2.lec4.services.IProductService;
 import ru.vyrostkoolga.j2eelec2.lec4.services.IWarehouseService;
+import ru.vyrostkoolga.j2eelec2.lec5.controllers.RestController;
+import ru.vyrostkoolga.j2eelec2.lec5.serviceModel.response.CustomersResponse;
+import ru.vyrostkoolga.j2eelec2.lec5.serviceModel.response.ErrorResponse;
+import ru.vyrostkoolga.j2eelec2.lec5.serviceModel.response.Response;
 
 public class GenericBean
 {
@@ -22,6 +29,7 @@ public class GenericBean
 	private IWarehouseService _warehouseService;
 	private IProductService _productService;
 	private ICategoryService _categoryService;
+	private IOrderService _orderService;
 	
 	// @formatter:off
 	public void setCustomerService( ICustomerService customerService ) { _customerService = customerService; }
@@ -35,6 +43,9 @@ public class GenericBean
 	
 	public void setProductService(IProductService productService) {_productService = productService;}
 	public IProductService getProductService() {return _productService;}
+	
+	public void setOrderService(IOrderService orderService) {_orderService = orderService;}
+	public IOrderService getOrderService() {return _orderService;}
 	// @formatter:on
 	
 	public void init( )

@@ -13,4 +13,7 @@ public interface ICustomerService
 	public Customer delete(Customer customer) throws Exception;
 	public List<Customer> findAll();
 	public Customer update(Customer customer) throws Exception;
+	
+	// lecture 5
+	public List< Customer > findByName( String name );
 }

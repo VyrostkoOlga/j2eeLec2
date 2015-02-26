@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.024" errors="0" skipped="0" tests="1" name="TestBase.Test">
+<testsuite failures="1" time="0.026" errors="0" skipped="0" tests="1" name="TestBase.Test">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/OlgaVyrostko/Documents/workspace-sts-3.6.3.SR1/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf494387059567158063.tmp"/>
+    <property name="classworlds.conf" value="/Users/OlgaVyrostko/Documents/workspace-sts-3.6.3.SR1/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf5106682453842649697.tmp"/>
     <property name="sun.jnu.encoding" value="MacCyrillic"/>
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -65,11 +65,11 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.024" classname="TestBase.Test" name="test">
+  <testcase time="0.026" classname="TestBase.Test" name="test">
     <failure type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.fail(Assert.java:95)
-	at TestBase.Test.test(Test.java:26)
+	at TestBase.Test.test(Test.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -103,7 +103,7 @@
     <system-err>java.lang.NullPointerException
 	at ru.vyrostkoolga.j2eelec2.lec4.services.WarehouseService.findById(WarehouseService.java:29)
 	at baseImpls.BaseWarehouse.addOneGood(BaseWarehouse.java:40)
-	at TestBase.Test.test(Test.java:23)
+	at TestBase.Test.test(Test.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -136,7 +136,7 @@
 java.lang.NullPointerException
 	at ru.vyrostkoolga.j2eelec2.lec4.entities.Warehouse.connectCategory(Warehouse.java:63)
 	at baseImpls.BaseWarehouse.addOneGood(BaseWarehouse.java:59)
-	at TestBase.Test.test(Test.java:23)
+	at TestBase.Test.test(Test.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)

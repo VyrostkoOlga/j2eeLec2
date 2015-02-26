@@ -13,4 +13,7 @@ public interface IProductService
 	public Product delete(Integer id) throws Exception;
 	public List<Product> findAll();
 	public Product update(Product product) throws Exception;
+	
+	// lecture 5
+	public List< Product > findByName( String name );
 }

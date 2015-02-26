@@ -12,5 +12,4 @@
 	<entity class="ru.vyrostkoolga.j2eelec2.lec4.entities.Category"></entity>
 	<entity class="ru.vyrostkoolga.j2eelec2.lec4.entities.Product"></entity>
 	<entity class="ru.vyrostkoolga.j2eelec2.lec4.entities.Warehouse"></entity>
-
 </entity-mappings>

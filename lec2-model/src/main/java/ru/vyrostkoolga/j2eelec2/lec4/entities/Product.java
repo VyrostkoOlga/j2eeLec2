@@ -1,6 +1,7 @@
 package ru.vyrostkoolga.j2eelec2.lec4.entities;
 
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
 @Table(name="products")
@@ -44,7 +47,7 @@ public class Product
 	@JoinColumn(name="warehouse_id")
 	private Warehouse warehouse;
 	
-	@OneToMany( mappedBy = "Product", cascade = CascadeType.ALL )
+	@OneToMany( mappedBy = "product", cascade = CascadeType.ALL )
 	private List<OrderItem> items;
 	
 	public String getName() {return name;}
@@ -59,7 +62,7 @@ public class Product
 	public float getPrice() {return price;}
 	public void setPrice(float price) {this.price = price;}
 	
-	public float getDuscount() {return discount;}
+	public float getDiscount() {return discount;}
 	public void setDiscount(float dsc) {this.discount = dsc;}
 	
 	public String getDescription() {return description;}
@@ -73,6 +76,12 @@ public class Product
 	
 	public void setItems(List<OrderItem> items) {this.items=items;}
 	public List<OrderItem> getItems() {return items;}
+	
+	public static void connect( Product product, OrderItem item )
+	{
+		product.getItems( ).add( item );
+		item.setProduct( product );
+	}
 	
 	public String toString()
 	{

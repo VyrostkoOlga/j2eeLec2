@@ -31,7 +31,7 @@ public class Category
 	@ManyToMany(targetEntity=Warehouse.class)
 	private List<Warehouse> warehouses;
 	 
-	@OneToMany(mappedBy="Category", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="category", cascade=CascadeType.ALL)
 	private List<Product> items;
 	
 	public Integer getId() {return id;}

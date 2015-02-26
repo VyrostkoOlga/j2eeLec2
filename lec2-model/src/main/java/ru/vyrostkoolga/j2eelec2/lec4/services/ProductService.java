@@ -50,7 +50,7 @@ public class ProductService implements IProductService
 		
 		updated.setCategory(product.getCategory());
 		updated.setDescription(product.getDescription());
-		updated.setDiscount(product.getDuscount());
+		updated.setDiscount(product.getDiscount());
 		updated.setItems(product.getItems());
 		updated.setPrice(product.getPrice());
 		updated.setQuantity(product.getQuantity());
@@ -73,5 +73,10 @@ public class ProductService implements IProductService
 			productRepository.delete(deleted);
 			return deleted; 
 		}
-
+	
+	// lecture 5
+	public List< Product > findByName( String name )
+	{
+		return productRepository.getProductByName(name);
+	}
 }

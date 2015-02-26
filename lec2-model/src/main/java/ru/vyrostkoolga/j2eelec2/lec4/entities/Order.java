@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="orders")
 public class Order 
@@ -20,13 +22,13 @@ public class Order
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private Integer id;
 	
 	@ManyToOne
 	@JoinColumn( name = "customer_id", nullable = false )
 	private Customer customer;
 	
-	@OneToMany( mappedBy = "Order", cascade = CascadeType.ALL )
+	@OneToMany( mappedBy = "order", cascade = CascadeType.ALL )
 	private List<OrderItem> items;
 	
 	public int getId() {return id;}

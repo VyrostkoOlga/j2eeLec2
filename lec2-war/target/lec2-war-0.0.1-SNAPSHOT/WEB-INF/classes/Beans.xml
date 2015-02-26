@@ -78,19 +78,14 @@
 	<bean id="warehouseService" class="ru.vyrostkoolga.j2eelec2.lec4.services.WarehouseService"/>
 	<bean id="productService" class="ru.vyrostkoolga.j2eelec2.lec4.services.ProductService"/>
 	<bean id="categoryService" class="ru.vyrostkoolga.j2eelec2.lec4.services.CategoryService"/>
-	
-	<bean id="baseWarehouse" class="baseImpls.BaseWarehouse">
-		<constructor-arg name="catService" ref="categoryService"/>
-		<constructor-arg name="warService" ref="warehouseService"/>
-		<constructor-arg name="id" value="1"/>
-		<constructor-arg name="prodService" ref="productService"/>
-	</bean>
-	
+	<bean id="orderService" class="ru.vyrostkoolga.j2eelec2.lec4.services.OrderService"/>
+		
 	<bean id="genericBeanDataBase" class="ru.vyrostkoolga.j2eelec2.lec4.GenericBean" init-method="init">
 		<property name="customerService" ref="customerService"/>
 		<property name="warehouseService" ref="warehouseService"/>
 		<property name="productService" ref="productService"/>
 		<property name="categoryService" ref="categoryService" />
+		<property name="orderService" ref="orderService"/>
 	</bean>
 	
 </beans>

@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name="warehouses")
 public class Warehouse 
@@ -34,7 +36,7 @@ public class Warehouse
 	@ManyToMany(targetEntity=Category.class)
 	private List<Category> categories;
 	 
-	@OneToMany(mappedBy="Warehouse", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="warehouse", cascade=CascadeType.ALL)
 	private List<Product> items;
 	
 	public Integer getId() {return id;}

@@ -65,5 +65,10 @@ public class CustomerService implements ICustomerService
 		
 		return updated;
 	}
-
+	
+	// lecture 5
+	public List< Customer > findByName( String name )
+	{
+		return customerRepository.getCustomerByName(name);
+	}
 }
